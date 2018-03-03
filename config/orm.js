@@ -1,3 +1,3 @@
 var connection = require("./connection.js");
 
-module.exports = orm;
+//module.exports = orm;
