@@ -48,7 +48,7 @@
         <div class="card-body">
           {{#each burgers}}
               {{#if devoured}}
-                {{> burgers/burger-block sleep=false}}
+                {{> burgers/burger-devoured devour=true}}
               {{/if}}
           {{/each}}
         </div>
