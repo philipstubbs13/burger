@@ -13,8 +13,8 @@
         <div class="card-body">
           <form class="create-form">
             <div class="form-group">
-              <label for="bu">Place order here:</label>
-              <input type="text" class="form-control" id="bu" placeholder="">
+              <label for="burger">Place order here:</label>
+              <input type="text" class="form-control" id="burgerToGo" placeholder="">
             </div>
             <button class="btn btn-primary" type="submit">Place order</button>
           </form>
@@ -31,11 +31,11 @@
          Burgers
         </div>
         <div class="card-body">
-          <ul>
-          {{#each burgers}}
-            <li>{{this.burger_name}}</li>
-          {{/each}}
-          </ul>
+              {{#each burgers}}
+                {{#unless devoured}}
+                  {{> burgers/burger-block devour=false}}
+                {{/unless}}
+              {{/each}}
         </div>
       </div>
     </div>
@@ -46,9 +46,11 @@
          Devoured burgers
         </div>
         <div class="card-body">
-          <ul>
-
-          </ul>
+          {{#each burgers}}
+              {{#if devoured}}
+                {{> burgers/burger-block sleep=false}}
+              {{/if}}
+          {{/each}}
         </div>
       </div>
     </div>
