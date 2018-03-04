@@ -1,38 +1,60 @@
-<h1>Burger</h1>
-
-<h2>Burgers</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Devoured burgers</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bu">Burger:</label>
-    <input type="text" id="bu" name="name">
+<div class="container">
+  <div class="jumbotron text-center bg-primary text-white">
+    <h1 class="display-4">Good Burger</h1>
+    <p class="lead">Welcome to Good Burger. Home of the Good Burger. Can I take your order?</p>
   </div>
 
-  <div class="form-group">
-    <label for="sleepy">Devoured?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+         Order a burger
+        </div>
+        <div class="card-body">
+          <form class="create-form">
+            <div class="form-group">
+              <label for="bu">Place order here:</label>
+              <input type="text" class="form-control" id="bu" placeholder="">
+            </div>
+            <button class="btn btn-primary" type="submit">Place order</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <button type="submit">Add burger</button>
-</form>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+         Burgers
+        </div>
+        <div class="card-body">
+          <ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+         Devoured burgers
+        </div>
+        <div class="card-body">
+          <ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
