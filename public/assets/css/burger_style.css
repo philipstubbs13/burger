@@ -5,3 +5,11 @@
 .devoured-burger-name {
     color: #ca341f;
 }
+
+body {
+    font-family: 'Righteous', cursive;
+}
+
+#app-title {
+    font-size: 90px;
+}
