@@ -41,7 +41,7 @@ https://gentle-caverns-56054.herokuapp.com/
 ## <a name="screenshots"></a> Screenshots
 
 ### Welcome to Good Burger
-<img src="readme_images/home.png">
+<img src="readme_images/home2.png">
 <br>
 <br>
 <img src="readme_images/all_burgers.png">
