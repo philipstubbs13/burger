@@ -5,14 +5,15 @@ var mysql = require("mysql");
 require("dotenv").config();
 
 //Define database connection properties (host, user, password, and database name)
-//MySQL password is passed into connection.js from the .env file using the dotenv npm package.
+//Use production database when deployed.
 if (process.env.JAWSDB_URL) {
   //Heroku deployment
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
 
 else {
-  //localhost
+  //else use localhost database for local development.
+  //MySQL password is passed into connection.js from the .env file using the dotenv npm package.
   var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -28,6 +29,7 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   }
+  //If a database connection is established, log the database thread number.
   console.log("connected as id " + connection.threadId);
 });
 

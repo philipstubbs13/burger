@@ -1,15 +1,18 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+    //Click event for adding a burger.
     $(".create-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
+        //Grab burger name from form field.
+        //When user submits burger name, set devoured state to false.
         var newBurger = {
         burger_name: $("#burgerToGo").val().trim(),
         devoured: 0
         };
 
-        // Send the POST request.
+        // Send the POST request using ajax.
         $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
@@ -22,11 +25,11 @@ $(function() {
         );
     });
 
-
+    //Click event to throw away/delete burger.
     $(".delete-burger").on("click", function(event) {
         var id = $(this).data("id");
     
-        // Send the DELETE request.
+        // Send the DELETE request using ajax.
         $.ajax("/api/burgers/" + id, {
           type: "DELETE",
         }).then(
@@ -38,6 +41,7 @@ $(function() {
         );
       });
 
+    //Click event for "Devour me" button.
     $(".change-devour").on("click", function(event) {
         var id = $(this).data("id");
         var newDevour = $(this).data("newdevour");
@@ -46,7 +50,7 @@ $(function() {
           devoured: "true"
         };
     
-        // Send the PUT request.
+        // Send the PUT request using ajax.
         $.ajax("/api/burgers/" + id, {
           type: "PUT",
           data: newDevourState
@@ -57,8 +61,5 @@ $(function() {
             location.reload();
           }
         );
-      });
-    
-    
-    
+      });   
 });

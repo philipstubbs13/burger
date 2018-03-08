@@ -1,3 +1,4 @@
+//Need to require connection.js so that the ORM can communicate/talk with the database.
 var connection = require("./connection.js");
 
 // Helper function for SQL syntax.
@@ -39,8 +40,11 @@ function printQuestionMarks(num) {
   }
   
 
-// Object for all our SQL statement functions.
+//Object for all our SQL statement functions.
+//Create the methods that will execute the necessary MySQL commands in the controllers.
+//These are the methods you will need to use in order to retrieve and store data in your database.
 var orm = {
+    //Select all function/query
     all: function(tableInput, cb) {
       var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
@@ -51,6 +55,7 @@ var orm = {
       });
     },
 
+    //Create function/query
     create: function(table, cols, vals, cb) {
       var queryString = "INSERT INTO " + table;
   
@@ -72,6 +77,7 @@ var orm = {
       });
     },
 
+    //Update function/query.
     // An example of objColVals would be {name: panther, sleepy: true}
     update: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
@@ -91,6 +97,7 @@ var orm = {
       });
     },
 
+    //Delete function/query
     delete: function(table, condition, cb) {
       var queryString = "DELETE FROM " + table;
       queryString += " WHERE ";
@@ -106,5 +113,6 @@ var orm = {
     }
   
   };
-  
+
+//Export the orm object.
 module.exports = orm;

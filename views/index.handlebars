@@ -1,4 +1,5 @@
 <div class="container">
+  <!--Jumbotron-->
   <div class="jumbotron text-center bg-primary text-white">
     <h1 class="display-4" id="app-title">Good Burger <img src="/assets/img/cheeseburger.png"></h1>
     <p class="lead">Welcome to Good Burger. Home of the Good Burger.</p>
@@ -10,6 +11,7 @@
         <div class="card-header bg-primary text-white">
          Can I take your order?
         </div>
+        <!--Create/add burger form-->
         <div class="card-body">
           <form class="create-form">
             <div class="form-group">
@@ -30,6 +32,7 @@
         <div class="card-header bg-primary text-white">
          Burgers
         </div>
+        <!--Div to hold burgers that have not been devoured yet-->
         <div class="card-body">
               {{#each burgers}}
                 {{#unless devoured}}
@@ -40,11 +43,12 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 mt-4">
       <div class="card">
         <div class="card-header text-white" id="devoured-card-header">
          Devoured burgers
         </div>
+        <!--When a burger has been devoured, put burger here-->
         <div class="card-body">
           {{#each burgers}}
               {{#if devoured}}
