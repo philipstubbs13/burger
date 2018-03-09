@@ -22,3 +22,12 @@ body {
 .lead {
     font-size: 24px;
 }
+
+/* Burger background image*/
+body {
+    background-image: url("/assets/img/burger.jpg");
+    /*Photo by Gianna Ciaramello on Unsplash*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
