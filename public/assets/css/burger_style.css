@@ -31,3 +31,13 @@ body {
     background-size: cover;
 }
 
+/* Footer color */
+.footer-body {
+    background-color: #ca341f;
+}
+
+/*Border styling for devoured burgers card and footer */
+.devoured-card, .footer {  
+    border-style: solid;
+    border-color: #ca341f;
+}
