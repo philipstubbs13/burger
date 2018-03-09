@@ -22,7 +22,7 @@ This project uses MySQL, Node, Express, Handlebars, and an ORM (Object Relationa
 
 This project also follows the MVC (Model-View-Controller) design pattern. The MVC design pattern assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with one another.
 
-  * </b>View object:</b>
+  * <b>View object:</b>
   A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view object displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view object communicates this user change via the controller to the model.
 
   * <b>Controller object:</b>
