@@ -16,20 +16,20 @@
 https://gentle-caverns-56054.herokuapp.com/
 
 ## <a name="about-this-project"></a> About this project
-This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a <b>Devour me</b>. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured. Each burger in this list has a <b>Throw away</b> button that allows you to remove the burger, which deletes the burger from the user interface as well as from the MySQL database. 
+This project is a full stack application that allows you to place an order for a burger. When you place an order, the burger you enter in the form field is added to the list of burgers on the left side of the screen. Each burger in the list has a <b>Devour me</b> button. Clicking this button moves the burger from the list on the left side of the screen to the list on the right. The list on the right is a list of burgers that have already been devoured. Each burger in this list has a <b>Throw away</b> button that allows you to remove the burger, which deletes the burger from the user interface as well as from the MySQL database. 
 
 This project uses MySQL, Node, Express, Handlebars, and an ORM (Object Relational Mapper). Node and MySQL are used to query and route data in the application. Express is used to create the server for the application, and Handlebars is a templating language that is used to generate the HTML.
 
 This project also follows the MVC (Model-View-Controller) design pattern. The MVC design pattern assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with one another.
 
-  * View object
-  A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view object displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view object communicates this user change via the controller to the model.
+  * <b>View object</b>
+  <p>A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view object displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view object communicates this user change via the controller to the model.</p>
 
-  * Controller object
-  A controller object is an intermediary between the view and the model. This object interprets any user changes made in the view object and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.
+  * <b>Controller object</b>
+  <p>A controller object is an intermediary between the view and the model. This object interprets any user changes made in the view object and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.</p>
 
-  * Model object
-  A model object manages the application data. When data is created or changed by the user in the view (for example, a user devours or deletes a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the new or updated data.
+  * <b>Model object</b>
+  <p>A model object manages the application data. When data is created or changed by the user in the view (for example, a user devours or deletes a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the new or updated data.</p>
 
 For more information about the MVC design pattern, check out this link for a high level overview: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 
