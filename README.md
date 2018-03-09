@@ -22,14 +22,14 @@ This project uses MySQL, Node, Express, Handlebars, and an ORM (Object Relationa
 
 This project also follows the MVC (Model-View-Controller) design pattern. The MVC design pattern assigns objects in the application one of three roles (model, view, or controller) and defines the way the different parts of the application communicate with one another.
 
-  * <b>View object</b>
-  <p>A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view object displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view object communicates this user change via the controller to the model.</p>
+  * </b>View object:</b>
+  A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view object displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view object communicates this user change via the controller to the model.
 
-  * <b>Controller object</b>
-  <p>A controller object is an intermediary between the view and the model. This object interprets any user changes made in the view object and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.</p>
+  * <b>Controller object:</b>
+  A controller object is an intermediary between the view and the model. This object interprets any user changes made in the view object and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.
 
-  * <b>Model object</b>
-  <p>A model object manages the application data. When data is created or changed by the user in the view (for example, a user devours or deletes a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the new or updated data.</p>
+  * <b>Model object:</b>
+  A model object manages the application data. When data is created or changed by the user in the view (for example, a user devours or deletes a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the new or updated data.
 
 For more information about the MVC design pattern, check out this link for a high level overview: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 
