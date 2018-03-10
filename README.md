@@ -94,11 +94,11 @@ The first step is to clone the project repository to a local directory on your c
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
 <pre>npm install</pre>
 <ul>
-	<li><b>express</b>, which is a Node.js web application framework (https://www.npmjs.com/package/express).</li>
-	<li><b>body-parser</b>, which parses incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
-	<li><b>dotenv</b>, which is used to retrieve the MySQL password from a .dotenv file(https://www.npmjs.com/package/dotenv).</li>
-  <li><b>mysql</b>, which is used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)</li>
-  <li><b>express-handlebars</b>, which allows you to use handlebars to create templates to build your HTML.</li>(https://www.npmjs.com/package/express-handlebars)</li>
+	<li><b>express</b> -  a Node.js web application framework (https://www.npmjs.com/package/express).</li>
+	<li><b>body-parser</b> - used to parse incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
+	<li><b>dotenv</b> - used to retrieve the MySQL password from a .dotenv file(https://www.npmjs.com/package/dotenv).</li>
+  <li><b>mysql</b> - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)</li>
+  <li><b>express-handlebars</b> - allows you to use handlebars to create templates to build your HTML.</li>(https://www.npmjs.com/package/express-handlebars)</li>
 </ul>
 
 <p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
