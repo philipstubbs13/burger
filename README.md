@@ -1,5 +1,5 @@
 # Good Burger
-<p>A full stack, MVC (Model-View-Controller) application that allows you to create burgers (POST), view a list of burgers available to eat (GET), devour burgers (PUT), and throw away them away after devoured (DELETE).</p>
+<p>A full stack, MVC (Model-View-Controller) application that allows you to create burgers (POST), view a list of burgers available to eat (GET), devour burgers (PUT), and throw them away after devoured (DELETE).</p>
 <img src="./public/assets/img/cheeseburger.png">
 
 ## Table of contents
