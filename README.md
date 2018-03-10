@@ -10,6 +10,7 @@
   	* [Backend technologies](#Backend)
   	* [Frontend technologies](#Frontend)
   * [Design improvements](#design-improvements)
+  * [Acknowledgments](#Acknowledgments)
   * [Issues](#Issues)
 
 ## <a name="live"></a>Live
@@ -34,10 +35,18 @@ This project also follows the MVC (Model-View-Controller) design pattern. The MV
 For more information about the MVC design pattern, check out this link: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 
 ## <a name="contribute"></a> Getting started
+The following section will take you through the steps to set up this application and get it running locally on your computer.
+
+If you don't want to set up this project locally and just want to see the deployed application, go to  https://gentle-caverns-56054.herokuapp.com/
+
 To set up this application locally on your own computer, perform the following steps:
   1. [Clone the repository](#clone-repository)
   2. [Install Node.js](#install-node)
   3. [Install the dependencies](#dependencies)
+  4. [Install MySQL Workbench](#install-mysql)
+  5. [Set up database](#database-setup)
+  6. [Create a .env file to store your MySQL Password](#create-env)
+  7. [Verify database connection information](#db-connect)
 
 ### <a name="clone-repository"></a> Clone the repository
 The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
@@ -45,10 +54,6 @@ The first step is to clone the project repository to a local directory on your c
   git clone https://github.com/philipstubbs13/burger.git
   cd burger
 </pre>
-
-### <a name="install-node"></a> Install Node.js
-<p>If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.</p>
-
 
 #### <a name="structure-of-project"></a> Structure of the project
 <p>After you clone the repository, navigate to the project root directory (burger). The project directory structure is set up as follows:</p>
@@ -89,6 +94,9 @@ The first step is to clone the project repository to a local directory on your c
   <li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
 </ul>
 
+### <a name="install-node"></a> Install Node.js
+<p>If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.</p>
+
 ### <a name="dependencies"></a> Install the dependencies
 <p>The following npm packages are dependencies to the project.</p>
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
@@ -102,6 +110,75 @@ The first step is to clone the project repository to a local directory on your c
 </ul>
 
 <p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
+
+### <a name="install-mysql"></a> Install MySQL Workbench
+<p>If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/</p>
+<p>For this project, MySQL Workbench is used to visually design, create, and manage the database used to burger data.</p>
+
+### <a name="database-setup"></a> Set up database
+To set up a database that you can use with this application, perform the following steps:
+<ol>
+<li><p>Open the db/schema.sql file and paste the contents of this file into MySQL Workbench.</p></li>
+<li><p>Execute the following statements:</p>
+  <pre>
+  CREATE DATABASE burger_db;
+  USE burger_db;
+  </pre>
+  <p>Running these statements creates a database called burger_db and sets it as the current database being used.</p>
+</li>
+<li>
+  <p>Execute the following statement to create a table called burgers.</p>
+  <pre>
+  CREATE TABLE burgers
+  (
+    id int NOT NULL AUTO_INCREMENT,
+    burger_name varchar(255) NOT NULL,
+    devoured boolean NOT NULL,
+    PRIMARY KEY (id)
+  );
+  </pre>
+  <p>This table includes columns for id (which is the primary key), burger name, and devoured (boolean value).</p>
+</li>
+<li>
+  <p>To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:</p>
+  <pre>
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Awesome Burger", true);
+
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Good Burger", false);
+
+  INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo Burger", true);
+  </pre>
+</li>
+</ol>
+
+### <a name="create-env">Create a .env file to store your MySQL Password</a>
+<p>If you set up MySQL to use a password to connect to your database, you need to provide your own .env file.
+If you did not set up MySQL with a password, you can skip this step.</p>
+
+<p>Create a file named .env in the project root directory (burger) with the following contents. Replace mysql_password with your actual MySQL password.</p>
+
+<pre>
+# MySQL Password
+
+MYSQL_PASSWORD='<i>mysql_password</i>'
+</pre>
+
+<p>This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because .env is specified in the .gitignore file, the password is kept private.</p>
+
+### <a name="db-connect">Verify database connection information</a>
+<p>Open the config/connection.js file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.</p>
+<p>Modify the connection properties as needed to reflect your database instance.</p>
+<p>For example:</p>
+<pre>
+  var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: process.env.MYSQL_PASSWORD,
+    database: "burger_db"
+  });
+</pre>
+
 
 
 ## <a name="screenshots"></a> Screenshots
@@ -140,8 +217,8 @@ The first step is to clone the project repository to a local directory on your c
 * Allow users to update a burger's name after it is created.
 * Add form validation so that the user can't submit an empty form (burger_name is null);
 
-## <a name="Acknowledgements"></a> Acknowledgements 
-* Background photo by Gianna Ciaramello on Unsplash.com
+## <a name="Acknowledgments"></a> Acknowledgments 
+* Background photo by Gianna Ciaramello on <a href="https://www.unsplash.com">Unsplash.com</a>
 * <a href="https://www.iconfinder.com/">Iconfinder</a> for Devour me burger icon and burger icon located in Jumbotron.
 * <a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a> for Throw away burger/trash can icon.
 
