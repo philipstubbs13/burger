@@ -1,4 +1,5 @@
 # Good Burger
+<p>A full stack, MVC (Model-View-Controller) application that allows you to create burgers (POST), view a list of burgers available to eat (GET), devour burgers (PUT), and throw away them away after devoured (DELETE).</p>
 <img src="./public/assets/img/cheeseburger.png">
 
 ## Table of contents
@@ -52,7 +53,7 @@ To set up this application locally on your computer, perform the following steps
   7. [Verify database connection information](#db-connect)
   8. [Start the server](#start-server)
 
-### <a name="clone-repository"></a> Clone the repository
+### <a name="clone-repository"></a> 1. Clone the repository
 The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
 <pre>
   git clone https://github.com/philipstubbs13/burger.git
@@ -79,6 +80,7 @@ The first step is to clone the project repository to a local directory on your c
       <li><b>assets/css/burger_style.css</b>: External CSS stylesheet.</li>
       <li><b>assets/img</b>: Contains icons and images used in the application.</li>
       <li><b>assets/js/burger.js</b>: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a burger, respectively.</li>
+    </ul>
   </li>
   <li>
     <p><b>models</b>: Contains a file called <b>burger.js</b>, which contains functions used to manage the application data and interact with the database.</p>
@@ -89,6 +91,7 @@ The first step is to clone the project repository to a local directory on your c
     <ul>
       <li><b>schema.sql</b>: The database schema. The schema is what describes the structure of the database table, and the datatypes that each column of the table can contain. For this project, the database includes one table that includes columns for id, burger name, and devoured state (true or false).</li>
       <li><b>seeds.sql</b>: Used to populate the table in the development database with some starter burger data.</li>
+    </ul>
   </li>
   <li>
     <p><b>config</b>: Contains 2 files.
@@ -107,10 +110,10 @@ The first step is to clone the project repository to a local directory on your c
   <li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
 </ul>
 
-### <a name="install-node"></a> Install Node.js
+### <a name="install-node"></a> 2. Install Node.js
 <p>If you don't already have Node.js installed on your computer, you can install the latest version here: https://nodejs.org/en/.</p>
 
-### <a name="dependencies"></a> Install the dependencies
+### <a name="dependencies"></a> 3. Install the dependencies
 <p>The following npm packages are dependencies to the project.</p>
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
 <pre>npm install</pre>
@@ -124,11 +127,11 @@ The first step is to clone the project repository to a local directory on your c
 
 <p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory.</p>
 
-### <a name="install-mysql"></a> Install MySQL Workbench
+### <a name="install-mysql"></a> 4. Install MySQL Workbench
 <p>If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/</p>
 <p>For this project, MySQL Workbench is used to visually design, create, and manage the database used to store burger data.</p>
 
-### <a name="database-setup"></a> Set up a development database
+### <a name="database-setup"></a> 5. Set up a development database
 To set up a development database that you can use with this application, perform the following steps:
 <ol>
 <li><p>Open the <b>db/schema.sql</b> file and paste the contents of this file into MySQL Workbench.</p></li>
@@ -167,7 +170,7 @@ To set up a development database that you can use with this application, perform
 </li>
 </ol>
 
-### <a name="create-env">Create a .env file to store your MySQL Password</a>
+### <a name="create-env">6. Create a .env file to store your MySQL Password</a>
 <p>If you set up MySQL to use a password to connect to your database, you need to provide your own <b>.env</b> file.
 If you did not set up MySQL with a password, you can skip this step.</p>
 
@@ -181,7 +184,7 @@ MYSQL_PASSWORD='<i>mysql_password</i>'
 
 <p>This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because <b>.env</b> is specified in the .gitignore file, the password is kept private.</p>
 
-### <a name="db-connect">Verify database connection information</a>
+### <a name="db-connect">7. Verify database connection information</a>
 <p>Open the <b>config/connection.js</b> file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.</p>
 <p>Modify the connection properties as needed to reflect your database instance.</p>
 <p>For example:</p>
@@ -195,13 +198,13 @@ MYSQL_PASSWORD='<i>mysql_password</i>'
   });
 </pre>
 
-### <a name="start-server>Start the server</a>
-<p>After performing all of the set up steps in the Getting started section, navigate to the project root directory (burger) and run the following command to start the server:</p>
+### <a name="start-server">8. Start the server</a>
+<p>After performing all of the setup steps in the <b>Getting started</b> section, navigate to the project root directory (burger) and run the following command to start the server:</p>
 <pre>
 node server.js
 </pre>
 <img src="readme_images/start_server.png">
-<p>To verify that the server has started and the application is working locally on your computer, open an Internet browser (preferably Chrome in case you need to do some debugging) and go to http://localhost:3000.</p>
+<p>To verify that the server has started and the application is working locally on your computer, open Chrome and go to <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 
 ## <a name="screenshots"></a> Screenshots
 
@@ -231,7 +234,7 @@ node server.js
 ### <a name="Frontend"></a> Frontend technologies
 * HTML
 * CSS
-* Bootstrap (http://http://getbootstrap.com/)
+* Bootstrap (http://getbootstrap.com/)
 * Javascript
 * jQuery (https://jquery.com/)
 * Handlebars (http://handlebarsjs.com/)
