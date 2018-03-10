@@ -4,7 +4,7 @@
   * [Live](#live)
   * [About this project](#about-this-project)
   * [Getting started](#getting-started)
-  * [Structure of the project](#project-structure)
+  * [Structure of the project](#structure-of-project)
   * [Screenshots](#screenshots)
   * [Technologies used to create app](#technologies-used)
   	* [Backend technologies](#Backend)
@@ -27,24 +27,26 @@ This project also follows the MVC (Model-View-Controller) design pattern. The MV
   A view object is an object in the application that is visible (in the user interface) to the end user of the application. The view displays data from the application's model and learns about any changes to the model data via the controller. For example, in this application, the user enters a burger name in a text field. The view communicates the user input via the controller to the model.
 
   * <b>Controller object:</b>
-  A controller object controls the flow of data between the view and the model. The controller interprets any user changes made in the view and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.
+  A controller object controls the flow of data between the view and the model (an intermediary between the two). The controller interprets any user changes made in the view and communicates the new or changed data to the model. Also, if the model were to change, the controller is what communicates the updated data to the view so that the user can see the new or updated data in the user interface.
 
   * <b>Model object:</b>
-  A model object manages the data. When data is created or changed by the user in the view (for example, a user devours or deletes a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the new or updated data.
+  A model object manages the data. When data is created or changed by the user in the view (for example, a user devours or throws away a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view to display the updated data to the user.
 
-For more information about the MVC design pattern, check out this link: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+For more information about the MVC design pattern, check out the following resources:
+  * https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+  * https://docs.microsoft.com/en-us/aspnet/core/mvc/overview
 
-## <a name="contribute"></a> Getting started
-The following section will take you through the steps to set up this application and get it running locally on your computer.
+## <a name="getting-started"></a> Getting started
+The following section will take you through the steps of setting up this application and getting it running locally on your computer.
 
-If you don't want to set up this project locally and just want to see the deployed application, go to  https://gentle-caverns-56054.herokuapp.com/
+If you don't want to set up this project locally and just want to see the deployed application, go to  https://gentle-caverns-56054.herokuapp.com/.
 
 To set up this application locally on your own computer, perform the following steps:
   1. [Clone the repository](#clone-repository)
   2. [Install Node.js](#install-node)
   3. [Install the dependencies](#dependencies)
   4. [Install MySQL Workbench](#install-mysql)
-  5. [Set up database](#database-setup)
+  5. [Set up a development database](#database-setup)
   6. [Create a .env file to store your MySQL Password](#create-env)
   7. [Verify database connection information](#db-connect)
 
@@ -104,27 +106,27 @@ The first step is to clone the project repository to a local directory on your c
 <ul>
 	<li><b>express</b> -  a Node.js web application framework (https://www.npmjs.com/package/express).</li>
 	<li><b>body-parser</b> - used to parse incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
-	<li><b>dotenv</b> - used to retrieve the MySQL password from a .dotenv file (https://www.npmjs.com/package/dotenv).</li>
+	<li><b>dotenv</b> - used to retrieve the MySQL password from a .env file (https://www.npmjs.com/package/dotenv).</li>
   <li><b>mysql</b> - used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)</li>
   <li><b>express-handlebars</b> - allows you to use handlebars to create templates to build the HTML.</li>(https://www.npmjs.com/package/express-handlebars)</li>
 </ul>
 
-<p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
+<p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory.</p>
 
 ### <a name="install-mysql"></a> Install MySQL Workbench
 <p>If you don't already have MySQL Workbench installed on your computer, you can install the latest version here: https://www.mysql.com/products/workbench/</p>
-<p>For this project, MySQL Workbench is used to visually design, create, and manage the database used to burger data.</p>
+<p>For this project, MySQL Workbench is used to visually design, create, and manage the database used to store burger data.</p>
 
-### <a name="database-setup"></a> Set up database
-To set up a database that you can use with this application, perform the following steps:
+### <a name="database-setup"></a> Set up a development database
+To set up a development database that you can use with this application, perform the following steps:
 <ol>
-<li><p>Open the db/schema.sql file and paste the contents of this file into MySQL Workbench.</p></li>
+<li><p>Open the <b>db/schema.sql</b> file and paste the contents of this file into MySQL Workbench.</p></li>
 <li><p>Execute the following statements:</p>
   <pre>
   CREATE DATABASE burger_db;
   USE burger_db;
   </pre>
-  <p>Running these statements creates a database called burger_db and sets it as the current database being used.</p>
+  <p>Running these statements creates a database called <b>burger_db</b> and sets it as the current database being used.</p>
 </li>
 <li>
   <p>Execute the following statement to create a table called burgers.</p>
@@ -140,7 +142,7 @@ To set up a database that you can use with this application, perform the followi
   <p>This table includes columns for id (which is the primary key), burger name, and devoured (boolean value).</p>
 </li>
 <li>
-  <p>To populate the burgers table with some starting burger data, open up the db/seeds.sql file and paste the contents into MySQL Workbench. Execute the code in seeds.sql from MySQL Workbench:</p>
+  <p>To populate the burgers table with some starting burger data, open up the <b>db/seeds.sql</b> file and paste the contents into MySQL Workbench. Execute the code in <b>seeds.sql</b> from MySQL Workbench:</p>
   <pre>
   INSERT INTO burgers (burger_name, devoured) VALUES ("Awesome Burger", true);
 
@@ -148,6 +150,9 @@ To set up a database that you can use with this application, perform the followi
 
   INSERT INTO burgers (burger_name, devoured) VALUES ("Mondo Burger", true);
   </pre>
+  <p>Your table should look similar to the following example:</p>
+  <img src="readme_images/burgers_table.png">
+  
 </li>
 </ol>
 
@@ -155,7 +160,7 @@ To set up a database that you can use with this application, perform the followi
 <p>If you set up MySQL to use a password to connect to your database, you need to provide your own .env file.
 If you did not set up MySQL with a password, you can skip this step.</p>
 
-<p>Create a file named .env in the project root directory (burger) with the following contents. Replace mysql_password with your actual MySQL password.</p>
+<p>Create a file named .env in the project root directory (burger) with the following contents. Replace <i>mysql_password</i> with your actual MySQL password.</p>
 
 <pre>
 # MySQL Password
@@ -166,7 +171,7 @@ MYSQL_PASSWORD='<i>mysql_password</i>'
 <p>This file will be used by the dotenv npm package, which will pass the password value as an environment variable to the global process.env object in node. Because .env is specified in the .gitignore file, the password is kept private.</p>
 
 ### <a name="db-connect">Verify database connection information</a>
-<p>Open the config/connection.js file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.</p>
+<p>Open the <b>config/connection.js</b> file and verify that the database connection information (host, user, port, password, and database) reflects the database you just created.</p>
 <p>Modify the connection properties as needed to reflect your database instance.</p>
 <p>For example:</p>
 <pre>
