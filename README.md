@@ -56,7 +56,7 @@ The first step is to clone the project repository to a local directory on your c
   <li> 
     <p><b>server.js</b>: This file does the following:</p>
 		<ul>
-	    	<li>Defines and requires the dependencies, including express, body-parser, and express-handlebars</li>
+	    	<li>Defines and requires the dependencies, including express, body-parser, and express-handlebars.</li>
 	    	 <li>Sets up the Express server.</li>
 	    	 <li>Sets up the Express server to handle data parsing using body-parser.</li>
 	    	 <li>Points the server to the API routes, which gives the server a map of how to respond when users visit or request data from various URLs.</li>
@@ -68,8 +68,8 @@ The first step is to clone the project repository to a local directory on your c
     <p><b>public</b>: Contains the static content (images, Javascript, and CSS). </p>
   </li>
   <li>
-    <p><b>models</b>: Contains a file called burger.js, which contains functions used to manage the application data and interact with the database.</p>
-    <p>The file also includes the code that will call the ORM functions using burger specific input for the ORM.</p>
+    <p><b>models</b>: Contains a file called <b>burger.js</b>, which contains functions used to manage the application data and interact with the database.</p>
+    <p>The <b>burger.js</b> file also includes the code that will call the ORM functions using burger specific input for the ORM.</p>
   </li>
   <li>
     <p><b>db</b>: The database schema. The schema is what describes the structure of the database table, and the datatypes that each column of the table can contain. For this project, the database includes one table that includes columns for id, burger name, and devoured state (true or false).</p>
@@ -82,7 +82,7 @@ The first step is to clone the project repository to a local directory on your c
       </ul>
   </li>
   <li>
-    <p><b>controllers</b>: Contains a file called <b>burgersController.js</b>, which contains the different routes (GET, POST, PUT, and DELETE) that are used to pass information to and from the view and model objects.</p>
+    <p><b>controllers</b>: Contains a file called <b>burgersController.js</b>, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.</p>
   <li><b>views</b>: Contains the Handlebars files, which are templates used to generate the html files.</li>
   <li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
   <li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
@@ -96,7 +96,9 @@ The first step is to clone the project repository to a local directory on your c
 <ul>
 	<li><b>express</b>, which is a Node.js web application framework (https://www.npmjs.com/package/express).</li>
 	<li><b>body-parser</b>, which parses incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
-	<li><b>path</b>, which allows the app to get the correct file paths for our HTML (https://www.npmjs.com/package/path).</li>
+	<li><b>dotenv</b>, which is used to retrieve the MySQL password from a .dotenv file(https://www.npmjs.com/package/dotenv).</li>
+  <li><b>mysql</b>, which is used to create a connection to the MySQL database via the command line.(https://www.npmjs.com/package/mysql)</li>
+  <li><b>express-handlebars</b>, which allows you to use handlebars to create templates to build your HTML.</li>(https://www.npmjs.com/package/express-handlebars)</li>
 </ul>
 
 <p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
