@@ -1,4 +1,5 @@
 # Good Burger
+<img src="./public/assets/img/cheeseburger.png">
 
 ## Table of contents
   * [Live](#live)
